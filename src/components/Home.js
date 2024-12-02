@@ -140,24 +140,23 @@ function Home() {
                   <td>{item.desig}</td>
                   <td>{item.salary}</td>
                   <td>
-                    <Link to="/edit">
-                      <Button
-                        variant="primary"
-                        className="me-3"
-                        onClick={() =>
-                          handleEdit(item.id, item.uname, item.age, item.desig, item.salary)
-                        }
-                      >
-                        <FaUserEdit />
-                      </Button>
-                    </Link>
-                    <Button
-                      variant="danger"
-                      onClick={() => handleDelete(item.id)}
-                    >
-                      <FaRegTrashAlt />
-                    </Button>
-                  </td>
+  <div className="d-flex gap-2 gap-md-3">
+    <Link to="/edit">
+      <Button
+        variant="primary"
+        onClick={() =>
+          handleEdit(item.id, item.uname, item.age, item.desig, item.salary)
+        }
+      >
+        <FaUserEdit />
+      </Button>
+    </Link>
+    <Button variant="danger" onClick={() => handleDelete(item.id)}>
+      <FaRegTrashAlt />
+    </Button>
+  </div>
+</td>
+
                 </tr>
               ))
             ) : (
